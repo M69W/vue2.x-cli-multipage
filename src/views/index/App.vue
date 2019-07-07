@@ -5,6 +5,7 @@
     <br />
     <div>
       <a href="ui.html">跳转新的页面</a>
+      <img src='../../assets/index.png'>
     </div>
     <router-view />
   </div>

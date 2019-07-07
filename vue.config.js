@@ -25,7 +25,7 @@ if (process.env.NODE_ENV == 'development') {
 }
 module.exports = {
   publicPath: './', // 官方要求修改路径在这里做更改，默认是根目录下，可以自行配置
-  outputDir: 'dist'+projectname, //标识是打包哪个文件
+  outputDir: 'dist/'+projectname, //标识是打包哪个文件,['dist'+projectname, //标识是打包哪个文件,打包会放在根目录下]
   //默认情况下，生成的静态资源在它们的文件名中包含了 hash 以便更好的控制缓存。如果你无法使用 Vue CLI 生成的 index HTML，你可以通过将这个选项设为 false 来关闭文件名哈希。
   filenameHashing: true,
   pages: page,
