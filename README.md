@@ -1,5 +1,6 @@
 # vue-cli3
 
+原型来自：  
 [https://blog.csdn.net/weixin_43554698/article/details/89356625](https://blog.csdn.net/weixin_43554698/article/details/89356625)  
 [https://github.com/chenshuang0630/vue-cli3](https://github.com/chenshuang0630/vue-cli3)  
 
@@ -16,7 +17,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build-index  # see package.json
 ```
 
 ### Run your tests
