@@ -20,7 +20,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm run build-index  # see package.json
+npm run build index  # /src/views/*
 ```
 
 ### Run your tests
