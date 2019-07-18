@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build-index": "vue-cli-service build index",
-    "build-ui": "vue-cli-service build ui",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "core-js": "^2.6.5",
     "filemanager-webpack-plugin": "^2.0.5",
     "vue": "^2.6.10",
