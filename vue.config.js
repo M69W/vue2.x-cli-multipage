@@ -13,10 +13,6 @@ const chalk = require('chalk')// 对文案输出的一个彩色设置
 const autoprefixer = require('autoprefixer')
 const pxtoviewport = require('postcss-px-to-viewport')
 
-// 引入插件
-let vConsolePlugin = require('vconsole-webpack-plugin')
-// 接收运行参数
-
 //  首先需要引入filemanager-webpack-plugin插件
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 
@@ -109,11 +105,6 @@ module.exports = {
             { source: './dist/' + projectname, destination: './dist/' + projectname + '.zip' }
           ]
         }
-      }),
-      // eslint-disable-next-line new-cap
-      new vConsolePlugin({
-        filter: [], // 需要过滤的入口文件
-        enable: true // 正式发布时前记得改回 false，true为启动vConsole
       })
     ]
     if (process.env.NODE_ENV === 'production') {
