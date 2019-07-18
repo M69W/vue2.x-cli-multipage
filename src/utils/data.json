@@ -1,0 +1,35 @@
+{
+    "usualModules": [{
+        "updateTime": true,
+        "pageSize": true,
+        "currentPage": 0,
+        "ID": false,
+        "chnModuleGroup": "航班相关",
+        "totalPages": false,
+        "enModuleGroup": "Flight Related",
+        "identifier": "com.csair.opws.flightDyn",
+        "iconVersionNum": "20190418",
+        "enName": "Flight Dynamic",
+        "orderId": true,
+        "startRow": false,
+        "iconBase64Code": "icon_hangbandongtai",
+        "chnName": "航班动态"
+    },
+    {
+        "updateTime": true,
+        "pageSize": true,
+        "currentPage": 0,
+        "ID": true,
+        "chnModuleGroup": "航班相关",
+        "totalPages": false,
+        "enModuleGroup": "Flight Related",
+        "identifier": "com.csair.opws.notice",
+        "iconVersionNum": "20190418",
+        "enName": "Notice Info",
+        "orderId": true,
+        "startRow": false,
+        "iconBase64Code": "icon_lixianhangban",
+        "chnName": "离线航班"
+    }
+    ]
+}

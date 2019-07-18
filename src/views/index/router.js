@@ -5,7 +5,7 @@ import Home from './Home.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -14,12 +14,17 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/second',
+      name: 'second',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './About.vue')
+      component: () => import(/* webpackChunkName: "about" */ './Second.vue')
     }
   ]
 })

@@ -1,0 +1,14 @@
+{ 
+	"identifier" : "com.test",
+	"name" : "测试数据",
+	"version" : "0.0.1",
+	"build" : 1,
+	"releaseNote": "测试数据",
+	"hidden" : false,
+	"dependencies" : {
+		"piece" : "0.0.1",
+		"com.test.base": "0.0.1",
+        "butterfly"     : "0.0.1",
+        "ratchet"       : "0.0.1"
+	}
+}

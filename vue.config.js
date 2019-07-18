@@ -6,6 +6,18 @@ const path = require('path')
 
 const chalk = require('chalk')// 对文案输出的一个彩色设置
 
+// 引入postcss-pxtorem 来自https://www.jianshu.com/p/8f9aab666c4a
+// const pxtorem = require('postcss-pxtorem')
+
+// https://github.com/youzan/vant-demo/blob/master/viewport/vue.config.js
+const autoprefixer = require('autoprefixer')
+const pxtoviewport = require('postcss-px-to-viewport')
+
+// 引入插件
+let vConsolePlugin = require('vconsole-webpack-plugin')
+// 接收运行参数
+const argv = require('yargs').describe('debug', 'debug 环境').argv // use 'webpack --debug'
+
 //  首先需要引入filemanager-webpack-plugin插件
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 
@@ -75,6 +87,12 @@ module.exports = {
     hotOnly: false, // 没啥效果，热模块，webpack已经做好了
     proxy: null // 设置跨域，即将本文件内任何没有匹配到的静态文件，都指向跨域地址
   },
+  chainWebpack: (config) => {
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('assets', resolve('src/assets'))
+      .set('components', resolve('src/components'))
+  },
   configureWebpack: (config) => {
     const plugins = [
       new FileManagerPlugin({ // 初始化 filemanager-webpack-plugin 插件实例
@@ -93,9 +111,30 @@ module.exports = {
           ]
         }
       }),
+      // eslint-disable-next-line new-cap
+      new vConsolePlugin({
+        filter: [], // 需要过滤的入口文件
+        enable: false // 发布代码前记得改回 false
+      })
     ]
     if (process.env.NODE_ENV === 'production') {
       config.plugins = [...config.plugins, ...plugins]
+    }
+  },
+  css: {
+    sourceMap: true,
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtoviewport({
+            viewportWidth: 375,
+            // 该项仅在使用 Circle 组件时需要
+            // 原因参见 https://github.com/youzan/vant/issues/1948
+            selectorBlackList: ['van-circle__layer']
+          })
+        ]
+      }
     }
   }
 }

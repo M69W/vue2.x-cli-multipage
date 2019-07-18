@@ -1,29 +1,45 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link to="/home">Home</router-link>
+    <router-link to="/second">第二个页面</router-link>
     <br />
     <div>
       <a href="ui.html">跳转新的页面</a>
-      <img src='../../assets/index.png'>
+      <a href="details.html">跳转新的页面2</a>
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
+import router from './router'
 export default {
   data () {
-    return {}
+    return {
+    }
+  },
+  beforeCreate (e) {
+    let isPage = ''
+    isPage = localStorage.getItem('second')
+    if (isPage !== null) {
+      /* eslint-disable */
+      router.push(isPage.replace("\"","").replace("\"",""))
+    }
+  },
+  created () {
+  },
+  beforeMount (e) {
   },
   mounted () {
-    console.log(this)
-    console.log(this.$router)
+    console.log('1', this)
+    console.log('1', this.$router)
   }
 }
 
 </script>
-<style>
+<style lang="scss">
+  @import './src/assets/style/reset.scss';
+  @import './src/assets/style/common.scss';
   #nav {
     background: cadetblue;
     text-align: center
