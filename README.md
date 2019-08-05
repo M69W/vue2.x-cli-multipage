@@ -9,7 +9,7 @@
 ## 打包  
 打包单模块：  
 `npm run build --moudle=index`  
-<del>打包单模块：npm run build 暂时没适配打包所有模块的配置</del>  
+<del>打包所有模块：npm run build 暂时没适配打包所有模块的配置</del>  
 
 
 ## Project setup
