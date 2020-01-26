@@ -9,7 +9,9 @@
 ## 打包  
 打包单模块：  
 `npm run build --moudle=index`  
-<del>打包所有模块：npm run build 暂时没适配打包所有模块的配置</del>  
+打包所有模块：  
+`npm run build:all`  
+说明：在`package.json`中添加需要打包的模块指令，vue-cli会根据指令顺序依次打包  
 
 
 ## Project setup
