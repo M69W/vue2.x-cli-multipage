@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:all": "npm run build --moudle=index & npm run build --moudle=ui",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
