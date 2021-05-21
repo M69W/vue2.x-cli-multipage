@@ -31,8 +31,6 @@ export default {
   beforeMount (e) {
   },
   mounted () {
-    console.log('1', this)
-    console.log('1', this.$router)
   }
 }
 

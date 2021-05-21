@@ -169,19 +169,21 @@ module.exports = {
     }
     const plugins = [
       new FileManagerPlugin({ // 初始化 filemanager-webpack-plugin 插件实例
-        onStart: {
-          delete: [ // 首先需要删除项目根目录下对应页面的zip
-            './dist/' + projectname + '.zip'
-          ]
-        },
-        onEnd: {
-          // 复制对应的数据文件 到打包模块的目录下
-          copy: [
-            { source: './src/views/' + projectname + '/datas.js', destination: './dist/' + projectname + '/' }
-          ],
-          archive: [ // 然后我们选择dist文件夹将之打包成对应页面的zip并放在根目录
-            { source: './dist/' + projectname, destination: './dist/' + projectname + '.zip' }
-          ]
+        events: {
+          onStart: {
+            delete: [ // 首先需要删除项目根目录下对应页面的zip
+              './dist/' + projectname + '.zip'
+            ]
+          },
+          onEnd: {
+            // 复制对应的数据文件 到打包模块的目录下
+            copy: [
+              { source: './src/views/' + projectname + '/datas.js', destination: './dist/' + projectname + '/' }
+            ],
+            archive: [ // 然后我们选择dist文件夹将之打包成对应页面的zip并放在根目录
+              { source: './dist/' + projectname, destination: './dist/' + projectname + '.zip' }
+            ]
+          }
         }
       })
     ]
@@ -220,8 +222,6 @@ module.exports = {
         @import 'style/mixin.scss';
         `
       }
-    },
-    // 启用 CSS modules for all css / pre-processor files.
-    modules: false
+    }
   }
 }

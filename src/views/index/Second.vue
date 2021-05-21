@@ -74,13 +74,10 @@ export default {
       this.show = true
       this.$storage.remove('second')
       this.value = '清除 localstorage'
-      console.log('清除 localstorage')
     }
   },
   beforeCreate: function () {
     console.log('创建前')
-    console.log(this.data)
-    console.log(this.$el)
   },
   created: function () {
     console.log('已创建')
@@ -118,17 +115,15 @@ export default {
       }
     }
     console.log(this.info)
-    console.log(this.$el)
   },
   beforeMount: function () {
     console.log('mount之前')
     console.log(this.info)
-    console.log(this.$el)
   },
   mounted: function () {
     console.log('mounted')
     console.log(this.info)
-    console.log(this.$el)
+    // console.log(this.$el)
   },
   beforeUpdate: function () {
     console.log('更新前')

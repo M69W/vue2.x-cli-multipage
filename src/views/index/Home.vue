@@ -76,15 +76,11 @@ export default {
   beforeMount (e) {
   },
   mounted () {
-    console.log(this.$router)
-    console.dir(this.$storage.get('second'))
-    console.dir('此页面获取 localstorage')
   },
   methods: {
     getStorage: function () {
       this.show = true
       this.value = this.$storage.get('second') ? this.$storage.get('second') : null
-      console.dir(this.value)
     },
     remove: function () {
       this.show = true
